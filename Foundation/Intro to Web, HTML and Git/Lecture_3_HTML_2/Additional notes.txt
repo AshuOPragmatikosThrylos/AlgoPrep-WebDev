@@ -1,0 +1,42 @@
+block level elemenyts parent k width lete h
+
+inline elemts.....jitne length utna hi width leti h
+
+nav bar kaise bnti h...ul-li-a-href-id 
+
+<a href = id se...create hyperlink in a doc --> scroll
+
+smooth scroll
+<style>
+    html{
+        scroll-behavior: smooth;
+    }
+</style>
+
+
+label kyu use krte h?
+label pe click krne se input area tab highlight hota h ja
+when "for" of label is same as "id" of input area
+
+
+submit krne se pehle emial validation hoti h nt while entering pr submit button pe click krne k baad hi
+submit krne se pehle numbek ki validation (min,max) chalti h
+
+
+<input type="submit"
+
+
+default value --> value attribute
+
+
+readonly attribute
+
+required attribute
+
+
+lorem500 Tab --> to get 500 random words
+
+---------------------------------------------------------
+text aur search type ki input me fark
+
+search knows to remove traling spaces and search also shows cross to reset

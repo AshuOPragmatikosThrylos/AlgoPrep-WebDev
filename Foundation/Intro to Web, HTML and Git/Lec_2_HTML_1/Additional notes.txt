@@ -1,0 +1,35 @@
+h1 --> page level
+h2 --> sectio level
+h3 --> card level
+
+
+alt --> 1) for blind people, 2) so that when image is broken it is still noticeable
+
+sirf height daalne se image me...width apne aap adjust ho jaega....and vice versa
+
+
+images me height ya width at least ek ciz de dena chahiye jab image etwork se aa rha hota h to
+
+
+naye page me link khole kliye...anchor tag me target="_blank"
+
+
+download ka button.....k liye download attribute in anchor tag
+
+
+button tag bhi hota h
+
+
+type ="A" -- attribute of <ol>
+type ="1" -- attribute of <ol> --> numeral
+type ="I" -- attribute of <ol> --> roman numerals
+
+
+disabled --> attribute of buttonn (jab tak form submit hota h tab tk button ko disable kr skte)
+
+
+
+----------------------
+tables
+
+ remember table.html

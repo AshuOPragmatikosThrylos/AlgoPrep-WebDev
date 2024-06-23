@@ -1,0 +1,74 @@
+input:valid
+input:invalid 
+
+krke style change krk skte form me
+
+....above ko invalid cue kehte h
+
+kya galart h inpu me....ye to submit krte waqt hi pta chalega
+--------------------------
+
+Patterns
+
+attribute --> pattern="[a-z]"
+pattern="\d{16}" ---> matches 16 digits credit card
+
+
+<input type="url" bhi hota h
+
+
+jis chacter ko optional krna h uske baaad ? lga do
+
+to match 0 or more charcters   .+
+
+------------------------------------------------
+textarea tag for addig comments
+
+
+drop down k liye
+select tag aur uske andr option tag
+selected attribute ---> for by default option
+
+fieldset tag se ek box aa jata h iske several member elements k around....jaise several checkbox
+legend tag to name the box
+
+if only 1 option should be selected --> then use radio button instead
+<input type = "radio" 
+
+radio button ko group krna pdega using "name" attribute ---> tabhi sirf ek select hoga
+
+by default koi radio button select ho --> checked attribute
+------------------------------------
+form me 
+<input type="submit" ki tarah
+<input type ="reset" bhi hota h
+-------------------------------------
+
+input type="range" min="" max="" value ="" step="" --> for slider....value is by default value
+-----------------
+<video 
+autoplay akela kaam nhi krta --> chrome prevents it to ensure good UX
+autoplay controls
+ya
+autoplay muted hi kaam krta h
+
+loop attribue --> self explanatory attribute of video
+
+
+
+video me alt tag nhi hota isliye below
+<figure> me <video daal do
+aur Figure k andr <figcption hota h 
+
+<figure wali chiz <img, <audio k sath bhi work krti h
+
+
+<audio
+    <source src=""
+</audio
+
+------------------------------------
+iframe - api site k andr dusri site chlane k kaam me aata h
+embed youtube videos, embed maps iframe  se hi hota h
+
+iframe se webpage slow ho jata h
