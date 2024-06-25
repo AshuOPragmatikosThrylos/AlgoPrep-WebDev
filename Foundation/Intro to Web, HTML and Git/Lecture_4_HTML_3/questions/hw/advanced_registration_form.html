@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMart Advanced Form</title>
+</head>
+
+<body>
+
+    <h1>Create User Account</h1>
+    <form>
+        <label for="fullname">Full Name:</label>
+        <input type="text" name="fullname" id="fullname" placeholder="fullname" required>
+        <br><br>
+
+        <label for="email">Email Address:</label>
+        <input type="email" name="email" id="email" required>
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br><br>
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" name="confirm_password" id="confirm_password">
+        <br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="text" name="dob" id="dob" pattern="\d{4}-\d{2}-\d{2}">
+        <br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" name="phone" id="phone"
+        pattern="[+][9][1]\d{10}"
+        >
+        <br><br>
+
+        <label for="credit_card">Credit Card Number:</label>
+        <input type="text" name="credit_card" id="credit_card" 
+        pattern="\d{16}">
+        <br><br>
+
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" pattern="^[a-zA-Z0-9]+$">
+        <br><br>
+
+        <label for="website">Website URL </label>
+        <input type="text" name="website" id="website" 
+        pattern="https?://.+">
+        <br><br>
+
+        <label for="comments">Comments</label>
+        <textarea name="" id="comments" rows="6" cols="30"></textarea>
+        <br><br>
+
+        <fieldset>
+            <legend>Subscription Plan</legend>
+            <label for="monthly">Monthly</label>
+            <input type="radio" name="subscription plan" id="monthly" value="monthly">
+            <label for="quarterly" >Quarterly</label>
+            <input type="radio" name="subscription plan" id="quarterly" value="quarterly" checked>
+        </fieldset>
+        <br><br>
+
+        <label for="country">Country</label>
+        <select name="" id="country">
+            <option value="Pakistan">Pakistan</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Nepal">Nepal</option>
+            <option value="Bhutan">Bhutan</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="India" selected>India</option>
+            <option value="Sri Lanka">Sri Lanka</option>
+            <option value="Myanmar">Myanmar</option>
+            <option value="China">China</option>
+            <option value="Tibet">Tibet</option>
+        </select>
+        <br><br>
+         
+        <label for="volume preference">Volume Preference</label>
+        <input type="range" name="" id="volume preference" >
+        <br><br>
+
+        <!-- <button type="submit">Register</button> -->
+        <input type="reset" value="Reset">
+        <input type="Submit" value="Register">
+    </form>
+
+
+</body>
+
+</html>

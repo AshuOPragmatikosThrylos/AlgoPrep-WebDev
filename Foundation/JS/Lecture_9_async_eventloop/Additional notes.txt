@@ -1,0 +1,14 @@
+arrow function....like function expression but function keyword nhi likhna pdta ....kyun aaya tha ye level up me btaya jaega
+
+
+iife bs ek baar run hota h...since variable me reference nhi h to baar baar invoke nhi kr skte
+
+parameter pass nhi krenge tb bhi function call ho jata h....bs uske andr undefined jata h
+If no return statement is used, the function returns undefined .
+
+
+console.log browser se aata h
+
+setTimeout bhi browser ka part h
+
+logic comes from js features comes from env( browser, nodejs)

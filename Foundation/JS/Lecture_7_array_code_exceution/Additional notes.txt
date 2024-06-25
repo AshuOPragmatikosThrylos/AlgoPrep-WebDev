@@ -1,0 +1,72 @@
+slice.....arr ka copy bnakr uspr kaam krta h
+splice --> kahan se aur kitne remove krne h arr me (slice me removal nhi hota but splice me removal hota h)
+
+above ka diff pooch liya jata h interview me
+
+number(false) gives 0....isliye use includes() if not prsent gives -1 and not false
+
+
+js....jahan tk code shi h wahan tk codechal jata ....implies interpreted language ...not compile
+
+const mtlb references final h....pr actual object se array ka andr ka chiz bdl skte.....imp
+// const arr = [10, 20, 30];
+// const arr2 = [30, 40, 50];
+// arr = arr2;
+// console.log(arr); --> exception
+
+// const arr=[10,20,30];
+// arr.push(100);
+// console.log("arr",arr);
+
+always use const ....unless pucca pta h ki change krna h...jaise in for loop let use krna pdega
+
+
+fn()
+
+fn (){}
+
+
+works  and 
+
+
+fn(){}
+
+fn() works as well
+
+kyunki memory allocation pehle ho jata h
+
+
+
+window....execution creation k smay hi milta h
+window represents current tab of browser
+
+
+javascript me character nhi hota ....bs string
+
+
+join split are opposite of each other
+-------------------------------------------------------------------------------------------------------
+// function real() {
+//     console.log("I am real. Always run me");
+// }
+
+// function real() {
+//     console.log("No I am real one ");
+// }
+
+// function real() {
+//     console.log("You both are wasted");
+// }
+// real();
+
+since JS is an interpreted language and since hoisting is done before code execution therefor at the time of invocation of real() it'll have the third version of the function
+but we might not have expected that
+so writing code like above could introduce unexpected bugs
+
+multiple functions define kar skte hai with same name and parameters usme kaafi baar chances hote ki bug aa skta hai code me.
+But agar function ko variable me assign krte hai to wo ek hi baar ho skta hai kyuki ek variable ek scope me ek hi baar define Kiya ja skta hai to wo bug aane ke chance ko reduce kr deta hai
+
+We can't do below in same scope thus preventing bugs
+ let real = function real(){//code1}
+ let real = function real(){//code2}
+ let real = function real(){//code3}

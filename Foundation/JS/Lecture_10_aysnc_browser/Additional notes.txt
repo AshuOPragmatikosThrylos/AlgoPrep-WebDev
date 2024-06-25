@@ -1,0 +1,44 @@
+agr koi function ko bs ek hi baar call krna h then we make it iife
+
+asynchronous function (waiting, setTimeout) webAPI wale area me wait krta h call stack me nhi
+
+
+extra waiting is doe in callback queue not in webAPI wala area
+
+event loop --> jaise hi callback stack khali ho jata h waise hi event loop callback queue me se uthata h aur callback me daalkr execute krwata h
+
+webAPIs, callback queue, event loop....sari browser dekhta h
+
+
+addEventListener, setTimeout ....both asynchronous function
+
+-----------------------------------------------------------------------------------------------------
+let a = true;
+console.log("Before");
+function fn() {
+    a = false;
+    console.log("I broke the while loop");
+}
+setTimeout(fn, 1000);
+console.log("After");
+while (a) {
+
+}
+
+while loop never breaks. Below are the reasons why -->
+
+ * 1. Every line of code that you wrote in your js file -> will only execute in call stack  
+ * 2. For a cb coming from WebAPIS to execute -> callstack should be empty
+ * 3. callback queue :As soon as task of asynchronous function is done there cb is immediatley
+ * enqueued in that queue
+ * 4. event loop : checks the queue and as soon as a cb arrived in the queue it continously 
+ * check if callstack is empty or not and pushed that cb in callStack .
+
+
+
+--------------------------------------------------------------------------------------------------
+object.key me undefined aa jata h...Why?? Because there is no key named as key in the object
+isliye hum object[key] use krte h
+
+When you type 'object.key'.. It actually looks for a key named 'key' inside that object. Kyuki us object mein koi 'key' naam ki koi key present nhi h.. Islie undefined aayega.. 
+Try adding 'key' as one of the key inside the object.. You will see that 'key' value getting printed.. Kyuki ab woh present hogi.. That why kyuki yeh error la skta h code mein we actually type obj[key] jo us key variable mein pdi value ko lakr object k keys k sath compare krta h.

@@ -1,0 +1,18 @@
+Inspect --> Sources -->add breakpoints..... Stack, Scope pe dhyan rkhan hota h
+
+let is block scoped
+
+
+let variable declare krne k baad hi use kr skte h (bhle hi we know that memory allocate to pehle hi ho jata h. we might think that memory to allocate ho chuka h to before declaration bhi shayd use kr pate honge...but that would be wrong)...usse pehle temporal deadzone
+
+outer scope...local me nhi h to function definition k bahr jo value h wo use hota h (lexically scoped)....function call k bahr nhi
+
+
+
+console.log (fn) ---> doesn't display function addres...but displays function code
+
+functions can also be treated as variables....so one function can be assigned to another
+aur isiliye hi function k andr function pass kr skte
+
+Jese multiple functions define kar skte hai with same name and parameters usme kaafi baar chances hote ki bug aa skta hai code me.
+But agar function ko variable me assign krte hai to wo ek hi baar ho skta hai kyuki ek variable ek scope me ek hi baar define Kiya ja skta hai to wo bug aane ke chance ko reduce kr deta hai

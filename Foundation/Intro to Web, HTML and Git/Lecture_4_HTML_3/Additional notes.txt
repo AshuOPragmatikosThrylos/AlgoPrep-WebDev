@@ -1,11 +1,11 @@
 input:valid
 input:invalid 
 
-krke style change krk skte form me
+krke style change kr skte form me
 
 ....above ko invalid cue kehte h
 
-kya galart h inpu me....ye to submit krte waqt hi pta chalega
+kya galat h input me....ye to submit krte waqt hi pta chalega
 --------------------------
 
 Patterns
@@ -15,14 +15,16 @@ pattern="\d{16}" ---> matches 16 digits credit card
 
 
 <input type="url" bhi hota h
+type="tel" bhi hota h
 
 
-jis chacter ko optional krna h uske baaad ? lga do
+jis character ko optional krna h uske baaad ? lga do
 
-to match 0 or more charcters   .+
+to match 0 or more charcters  use --->       .+
 
 ------------------------------------------------
-textarea tag for addig comments
+textarea tag for adding comments
+teaxtarea is not a input type...different tag in itself
 
 
 drop down k liye
@@ -37,7 +39,7 @@ if only 1 option should be selected --> then use radio button instead
 
 radio button ko group krna pdega using "name" attribute ---> tabhi sirf ek select hoga
 
-by default koi radio button select ho --> checked attribute
+by default koi radio button select ho --> checked attribute (not selected.......it is for drop down list)
 ------------------------------------
 form me 
 <input type="submit" ki tarah
@@ -58,7 +60,7 @@ loop attribue --> self explanatory attribute of video
 
 video me alt tag nhi hota isliye below
 <figure> me <video daal do
-aur Figure k andr <figcption hota h 
+aur Figure k andr <figcaption hota h 
 
 <figure wali chiz <img, <audio k sath bhi work krti h
 
@@ -66,9 +68,9 @@ aur Figure k andr <figcption hota h
 <audio
     <source src=""
 </audio
-
+same for video as well...Another way of writing --> src is also the attribute of <video> or <audio>
 ------------------------------------
 iframe - api site k andr dusri site chlane k kaam me aata h
-embed youtube videos, embed maps iframe  se hi hota h
+embed youtube videos, embed maps iframe se hi hota h
 
 iframe se webpage slow ho jata h
