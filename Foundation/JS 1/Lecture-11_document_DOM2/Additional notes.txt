@@ -1,0 +1,45 @@
+document enter --> prints the html document
+
+document object model ---> representing html document as a tree of objects
+
+document.children --> document me children ek attribute hota h
+
+documnet is 1 level above <html>
+Thus document.children[0] gives <html>
+
+array me traverse krke koi element nikalna is not feasible, thta's why browser gives us querySelector()
+querySelector() --> returns first matching element
+querySelectorAll()
+
+querySelector(".className")
+querySelector("#id")
+
+innerHTML --> method to get the html inside a tag
+textContent --> to get the text content inside a tag
+
+
+tagObject.style.propertyName = propertyValue --> to style tag with "tagName"
+
+tagObject.getAttribute("attributeName") --> gives attribute value
+
+
+tagObject.remove() --> to remove element
+
+
+//creation
+// create a li under a ul with class "list" in DOM
+
+const liElem = document.createElement("li"); --> Note createElement()
+liElem.innerText = "I am a task created by JS"
+
+const ul = document.querySelector(".list")
+
+ul.appendChild(liElem); --> Note appendChild()
+
+-------------------------------------------------------------------------
+TODO app
+
+centering a div --> width: something; margin:auto (left aur rigt dono se equal width pr div adjust ho jata h).......width k baad margin dene se center me aa jata h div
+1 rem = 16 px
+
+input.value se input tag element me UI me jo value enter kiya gya h wo mil jaega
