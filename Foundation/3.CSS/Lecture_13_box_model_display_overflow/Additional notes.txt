@@ -1,0 +1,28 @@
+padding
+border 1 px solid red
+
+element = content+padding+border
+
+margin is not part of element
+
+
+box-sizing: border-box (jo bhi mai height with set krunga wo element ko milega aur wo fixed ho jaega ...phir padding wagera dene se remaining (given width earlier - padding) width  content width ko jata h
+box-sizing: content-box --> whatever width, height I provide will be width/height of content (This behaviour is default)
+
+
+--------------------------------
+
+overflow: visible/hidden/
+	
+overflow:scroll --> by default scrollbar dikhata h (only in windows/linux....mac me scroll bar by default nhi dikhta)
+overflow:auto --> scroll bar dikhana h ki nhi depending on content length wo khud decide ho jata h
+
+------------------------------------
+display
+
+
+browser by default display:block apply krdeta h 
+
+inline element ko height, width, vertical margin nhi de skte
+
+display:inline-block ---> height, width apply kr skte....inline wali bhi baat reh gyi...next element same line me aa skta h

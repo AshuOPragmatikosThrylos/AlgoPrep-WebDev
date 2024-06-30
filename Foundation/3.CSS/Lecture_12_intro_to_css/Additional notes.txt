@@ -1,0 +1,26 @@
+color
+background-color
+font-size       1 rem = 16 px
+font-family
+font-weight
+text-decoration: underline
+font-style: italic
+line-height ---> for spacing between lines
+
+* ---> universal selector --> sab pe lg jaega
+
+input[value="Select me"] --> value k madad se bhi select kr skte --> called attribute selector
+
+<someTag class = "class1 class 2" --> 2 different classes are applied on <someTag 
+to select tags such as above
+.class1.class2 {} --> no space in between
+
+
+
+combinators
+----------------
+1)descendant combinator
+.class1 space .class2  ---> to select class 2 element  agr class 2 element is the descendant of class 1 element
+ 
+2) children combinator
+.class1>p --> to select p which is directly inside class1
