@@ -1,0 +1,64 @@
+rem px se bda hota h
+1 rem usually = 16 px
+
+below krne se rem ka conversion 20 px ho jaega 16 px nhi
+html {
+   font-size: 20 px
+}
+
+1 rem = font-size of html tag which is usually 16 px
+
+rem ka usecase ---> sari screens k liye alag alag size set krne ki zaroort nhi....
+bs font-size alag alag krdo for different types of screen aur kaam ho gya
+
+
+100 vh = current height of browser
+100 vw = current width of browser
+
+
+percentage --> ancestor ki size pe depend krta h
+vh --> screen size pe depend krta h
+
+
+
+by default body me 8px ka margin added hota h
+isliye ab log below krte h
+
+body {
+margin: 0px
+}
+
+
+height: calc(100vh - 120px) ---> apne aap calculate ho jaega value --> excel me cellls wale portion ka size vertically responsive hota h (vh ka usecase) but nav bar etc vertically responsive nhi hota
+
+---------------------
+flexbox
+
+display:flex .....parent pr lgta h .....sare child ko inline me la deta h
+
+
+justify-content: center (for horizontalplaying justify-content)
+center/flex-start/end/space-evenly (ye sab yaad nhi krna...Styles tab in dev tools me playground milta h flex k liye)
+space-between --> child k beech zyada space
+space-around --> first and last child k aaju baju (not between children) space zyada hogi
+
+
+align-items: --> to play vertically
+
+flex-direction: row/column (when it is columns .....means axis rotated 90 degree in clockwise direction....how child are aranged with respect to the axis also rotates along with the axis keeping the angle between them the same even on rotation)
+x axis --> main axis
+y axis --> cross axis
+
+
+How to center a div?
+in parent --> 
+display:flex
+justify-content:center
+align-items:center
+
+
+align-self --> if wantto align only one element and not all child element
+
+flex-wrap: wrap ---> jisse child elements parent k bahr overflow na ho
+
+

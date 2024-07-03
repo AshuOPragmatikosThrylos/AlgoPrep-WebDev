@@ -1,0 +1,43 @@
+JS pyramid generator 
+https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-introductory-javascript-by-building-a-pyramid-generator
+----------------------
+
+push() on array returns length of array after the element is pushed
+
+const cannot be uninitialised, throws error otherwise
+
+for (const row of rows) {
+
+}
+
+character.repeat(i) ---> repeats character i times
+
+
+always use const unless we know we might have to change value ---> const call = padRow();
+
+A falsy value is the opposite - a value considered false when evaluated as a boolean. JavaScript has a defined list of falsy values. Some of them include false, 0, "", null, undefined, and NaN.
+
+
+The equality operator can lead to some strange behavior in JavaScript. For example, "0" == 0 is true, even though one is a string and one is a number.
+
+The strict equality operator === is used to check if two values are equal and share the same type. As a general rule, this is the equality operator you should always use. With the strict equality operator, "0" === 0 becomes false, because while they might have the same value of zero, they are not of the same type.
+
+The strict inequality operator !== allows you to check if two values are not equal, or do not have the same type
+
+
+
+CSS Box Model Rothko painting
+https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-the-css-box-model-by-building-a-rothko-painting
+---------------------------------
+Create a rule that targets both .one and .two and increase their blur effect by 1 pixel.
+.one,.two {           (note separated by comma)
+  filter: blur(1px);
+}
+
+border-radius ---> for rounded squares/rectangles
+
+
+
+CSS cafe menu
+https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-basic-css-by-building-a-cafe-menu
+---------------------
