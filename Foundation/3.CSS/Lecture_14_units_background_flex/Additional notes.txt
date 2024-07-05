@@ -58,7 +58,13 @@ align-items:center
 
 
 align-self --> if wantto align only one element and not all child element
+stretch --> attribute that stretches the item to fill the container
 
 flex-wrap: wrap ---> jisse child elements parent k bahr overflow na ho
+2) wrap-reverse ---> Multiple lines from bottom to top
+vlaue
+1)wrap --> Multiple lines from top to bottom
+
+gap --> gap between cells of flex (between rows and between columns)
 
 

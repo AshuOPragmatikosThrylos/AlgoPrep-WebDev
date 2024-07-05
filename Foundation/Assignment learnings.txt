@@ -37,7 +37,45 @@ Create a rule that targets both .one and .two and increase their blur effect by 
 border-radius ---> for rounded squares/rectangles
 
 
+CSS Flexbox photo gallery
+https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-flexbox-by-building-a-photo-gallery
+------------------------------
+Q11: max-width
+text-align: center
+text-transform: uppercase
+
+
+row (default): horizontal axis with flex items from left to right
+row-reverse: horizontal axis with flex items from right to left
+column: vertical axis with flex items from top to bottom
+column-reverse: vertical axis with flex items from bottom to top
+
+
 
 CSS cafe menu
 https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-basic-css-by-building-a-cafe-menu
 ---------------------
+comma separated
+    <style>
+      h1, h2, p {
+        text-align: center;
+      }
+    </style>
+
+
+<hr> --> to display a divider between two elements
+
+
+
+a:hover {
+color: brown;
+}
+
+a:visited{
+}
+
+a:active{     (when the link is clicked)
+}
+
+
+margin-left:auto and margin-right:auto .....makes the element appear in center
