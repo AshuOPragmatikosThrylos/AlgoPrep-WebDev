@@ -1,0 +1,31 @@
+position: relative 
+position property agr use krte h to left, top wagera ye sab property bhi use kr skte (warna relative is like static)
+left is like margin-left 
+
+after applying relative and when we do say top:10px then this top is measured wrt to the original position of the element when no positioning was applied. That's why called relative
+
+
+relative aur sare position poperty ki values except static z-idex upar wala hota h
+jispr relative lga h is removed from document flow then is moved....
+moving this element does not shift other elements (unlike absolute...in absolute things move just once when the property is initially applied....other elements behave as if this element on which absolte has been applied is not there)
+
+position: absolute --> the element is taken out of the flow of the document and other elements behave as if it is not there
+1) distance measured wrt to page dimenions not parent element dimensions...not even page actually viewport (jitna screen visible h currently without scrolling)
+2) hum absolute kbhi bhi page k hisab se use nhi krte
+3) parent k hisab se krwane k liye parnet me position:relative  bhi daal do (ya phir kuch bhi except static daal do) (tab absolute will not be wrt to viewport)
+
+also element on which position:absolute is applied now no longer remains block level elements (if it's too long it'll still wrap)
+
+
+position: fixed (like absolute but remians fixed to viewport)
+
+position:static (default) (follow the html document flow for positioning of elements)
+
+
+
+
+
+
+
+
+

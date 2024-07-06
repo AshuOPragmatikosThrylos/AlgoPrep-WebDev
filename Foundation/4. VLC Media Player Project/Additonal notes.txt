@@ -1,0 +1,27 @@
+first take screenshot ....bnana kya h
+
+header, main, footer tag just for readability 
+
+hamesha reset.csss bnana pdta h koi bhi project me
+
+browser by default: 8px margin deta h..isliye margin:0 in reset.css krna pdta h
+
+header ki height fixed h baki reponsive h to vertical resizing of tab
+
+element hote hue bhi classes dene ka reason ---> jisse html ka code readble lge aur css se direct link hum read krte hi smjh paye
+
+outline border jaisa property h ......to see koi element kahan se kahan tk h 
+
+div ki by default height content ki height hoti h..... IMP
+
+
+google font ka code css file me sbse upr hona chahiye
+
+
+parent element ka property child element me inherit hota h
+
+
+font-family me fallback wala system hota h
+
+
+3rd party font ko double quotes me likhna hota h
