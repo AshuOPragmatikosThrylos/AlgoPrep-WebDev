@@ -1,0 +1,16 @@
+a:hover {
+}
+
+a:active{ (jab anchor k sath interact kr diya jaye)
+}
+
+a:link{ --> when link has never been visited
+}
+
+a:visited { --> when link has been visited at least once
+}
+
+
+pseudo classes ki order agr isse diffrent hua  to kaam nhi krega
+pnemonic ---> love hate
+link visited hover active

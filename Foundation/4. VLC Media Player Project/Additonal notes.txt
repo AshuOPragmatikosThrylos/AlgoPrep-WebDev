@@ -25,3 +25,55 @@ font-family me fallback wala system hota h
 
 
 3rd party font ko double quotes me likhna hota h
+--------------------------------------------------------------------------------
+kisi chiz ko chupane k liye --> display: none
+
+jb kisi menu item pe hover krte h to uska optiona visible ho jata h ---> mtlb pehle display:none rha hoga aur hover krne pr display: anything_other_than_none
+
+Note: 
+.menu-btn:hover .menu-items {  ---> jab menu pe hover ho to menu-items ko visible kr do
+display: block
+}
+
+
+alternative to above
+jab .menu-btn:hover ho tab sibling (menu-items) display ho jana chahiye
+now google sibling ko select krne ka tareeka
+
+.menu-btn:hover + .menu-tems {
+}
+
+
+h/w --->  jab menu options pe click kre to uska css change hona chahiye
+
+
+btn se niche jate hi deri options phir hat jata h
+kyuni menu-btn aur menu-items k beech me gap tha
+isliye .menu-items me se top hta do ya hta ki value km kr do
+
+as a practice, always chech whether JS file has been linked befor proceeding  any hurther with JS code
+
+use classes for CSS
+use ids for JS
+
+
+----------
+Copy image address gives base64 format (image gets converted to string format)....try pasting it in browser itself
+
+
+jab koi Opn pe click kre to i want Choose file (isko huumne display:none kr rkha h) pe bhi apne aap click ho jaye
+element.click() --> JS to add click on the element
+
+
+selecting a file is a "change" event on the input element (see js file)
+
+Event --> Target --> files me hume input file milta h
+
+URL bhi browser deta h
+URL.createObjectURL
+
+
+
+
+
+
