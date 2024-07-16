@@ -1,0 +1,76 @@
+responsive - units, flexbox, box-model, media-queries
+
+important components of animation
+1) transform
+      i) scale - scaleX, scaleY and scale
+      ii) rotate - rotateX, rotateY, rotate
+      iii) translate -  translateX, translateY translate - meaning  move
+2) transition
+      - transition-duration --> 1 phase se agle phase me jane k liye time dena hota h (so that things appear animated) (nhi to browser boht jldi krdega)
+      - transition-delay --> say hover k kitni der baad transition start krna h 
+      - transition-property --> kaun kaun si property change hogi ye specify krna pdta h
+      - transition-timing-function --> 
+      
+3) keyframe
+      - to make complete animation (combining keyframe along with using transform, transition , we get animation)
+
+
+top left of the screen is (0,0) ---> this makes +Y below (contrary to what we study in maths)
+point of view is z axis --> to understand rotateX, rotateY
+rotation axis --> passes through the middle of the shape
+
+
+both rotateX and rotateY makes object look like rotating in clockwise direction
+rotate --> rotation along resultant of rotation along X and rotation along Y which is actually rotation along Z
+for anticlockwise rotation --> rotate(-50deg)
+--------------
+
+transition-property: width, height;
+transition-duration: 3s
+
+transition-property: rotate, width (background-color--> another css property...the css which we change for an element on hover but we don't want transition to be applied on background-color) (mai chahata hu sb pr na lge...to jspr lgna h wo mention krdo)
+
+
+transition shuruat me slow hota h baad me fast ho jata h 
+to change above --> transition-timing-function: ease (default ---> called ease-in) (iske value k liye bhi dev-tools me ched chaad kr skte just like values for justify-content, align-items of flexbox
+
+-----------------------
+How to center a div
+
+1) display:flex
+justify-content:center
+alighn-items:center
+
+2) (not the modern way)
+
+parent --> position:relative
+children --> position:absolute
+
+top:50%
+left: 50%
+doesn't work
+underatand why
+
+hence add transform: translate(-50%) translateY (-50%)
+-----------------------------
+
+keyframes
+-----------
+
+box ko circle krna h to uska border-radisu 50% krdo
+
+
+animation-name: journey_to_circle
+animation-duration
+animation-iteration-count
+animation-direction
+
+@keyframe journey_to_circle {
+     50% {
+                background-color: value1
+     }
+
+     100 % {
+              background-color: value2
+      }
+}

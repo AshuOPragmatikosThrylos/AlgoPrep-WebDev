@@ -72,6 +72,44 @@ Event --> Target --> files me hume input file milta h
 URL bhi browser deta h
 URL.createObjectURL
 
+-----------------------------
+VLC class 3
+----------------
+now to implement speed up/down , volume up/down.... we need to search for methods of object of video element
+
+
+study why 0.1+0.2 not equal to 0.3...interview question
+
+feedback to user on volume up --> this can be done by toast
+
+
+
+
+icons
+----------
+fontawesome ---> google search
+we also need cdn link
+google search fontawesome cdn link
+
+cdn me css defined hoti h 
+
+
+loadmetadata() --> event which ensures video load hone k baad hi video properties access kre hum
+
+to implement full screen
+--------------------------------
+requestFullScreen is a menthod in output of querySelector
+
+
+h/w play pause functionality 
+seek() - slider
+left-right
+
+
+
+
+how to
+
 
 
 
