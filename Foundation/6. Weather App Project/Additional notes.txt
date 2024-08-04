@@ -1,0 +1,5 @@
+https://www.weatherapi.com/
+HTML5 APIs Playlist : https://youtube.com/playlist?list=PLyuRouwmQCjlBGMxI_0Ly_Dw-vrniOYNh&feature=shared : Steve Griffith (browser APIs)
+
+
+How to mention project in resume --> https://github.com/Jasbir96/Algoprep_cohort_1/blob/main/Weather_App/notes.md

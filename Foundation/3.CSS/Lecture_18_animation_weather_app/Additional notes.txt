@@ -63,7 +63,9 @@ box ko circle krna h to uska border-radisu 50% krdo
 animation-name: journey_to_circle
 animation-duration
 animation-iteration-count
-animation-direction
+animation-direction: alternate (wapas jis direction me animation hua tha, whi direction reverse me bhi hota h if we use alternate)
+animation-delay
+animation-timing-function: liner (like ease in transition-timing-function)
 
 @keyframe journey_to_circle {
      50% {

@@ -1,0 +1,69 @@
+component k andr data kaise pass kr skte h? by using props
+
+newArr = arr.map(fn) --> if i want arr[i] to be mapped to fn(arr[i])
+
+error in console --> each child in a list should have a uinque key prop // har ek list item jo hum React me use krte h uske pass ek unique identity honi chahiye
+
+how to resolve above error?
+arr.map((elem, index) => {
+    return <li key={index}> {elem} </li>
+})
+-----------------------
+normal JS me addEventListener() krte the
+React me we just add handlers
+<button onClick={eventHandler} >Click me</button>
+-----------------------
+// jab bhi interactivity add krni rehti h kisi component k andr to useState use krna rehta h
+const [value, setValue] = React.useState(0); // initialValue inside useState 
+
+const eventHandler = () => {
+     //  value++; // won't work
+     setValue(value+1);
+}
+
+{value} --> this is how we can use the value in an js to show in UI
+
+When the setValue gets called first it updates the value state variable and then call the
+component again called as rerendering.
+------------------------------------------------------------------------------------------------
+<script type="text/babel">
+    const rootElement = document.getElementById('root');
+
+    function Counter() {
+        const [value, setValue] = React.useState(0);
+
+        const handleIncrement = () => {
+            if (value === 10) {
+                return;
+            }
+            setValue(value + 1);
+        }
+
+        return (
+            <div>
+                <div>{value}</div>
+                <button onClick={handleIncrement}>+ Plus</button>
+            </div>
+        );
+    }
+
+    ReactDOM.render(<Counter />, rootElement);
+</script>
+------------------------------------------------------------------------------------------------
+
+
+Build tools - vite (create-react-app is old...not used now a days)
+--------------
+npm create vite@latest
+npm run dev ---> to deploy react app
+
+
+file structure understnding - index.html --> main.jsx --> App.jsx
+-------------------------------
+1) index.html --> 1) div for id="root" 2) script tag which links main.jsx
+2) src > main.jsx --> creation of root element in React's virtual DOM and its rendering
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+3) src > App.jsx --> 
+to send a component in another file, write this in the component file --> export default componentName
+to receive --> import
+4) Inside src create components> Component1.jsx

@@ -1,0 +1,45 @@
+setTimeout() --> callback based asynchronous function --> takes a function as an argument
+Example:
+console.log("Before")
+btn.addEventListener("click", cb)
+console.log("After")
+
+function cb() {
+console.log("I am clicked")
+}
+
+output
+----------
+Before (on load on webpage)
+After (on load on webpage)
+I am clicked (when btn is clicked)
+
+-------------------------------------------------------------------------
+
+fetch(), response.json() --> promise based asynchronous functions --> does not take a function directly as an argument but takes the function as an argument of then()
+
+fetch(url).then(pcb)
+response.json().then(pcb)
+---------------------------------------------------------------------------
+execution flow of an async function is sequential (not like setTimeout...wait somewhere else, continue execution, then return from waiting area....not like this)
+
+async function fn() {
+   console.log("Before")
+   const res = await fetch(url);
+   const resJson = await res.json();
+   console.log("resJson: ", resJson);
+   console.log("After");
+}
+
+
+expected output 
+----------
+Before
+After 
+resJson
+
+actual output
+----------------
+Before
+resJson
+After

@@ -1,0 +1,48 @@
+Single Page Application (SPA) --> very minimal page load in apps now a days --> page ek hi h usi me cheeze change ho rhi h
+create-react-app - build tool
+vite --> build tool
+
+in React we do component based development (for code reusability)
+
+Problems solved by React (choti application jahan interactivity har jagah phali hui nhi h wahan react use krne ka koi sense nhi h)
+Problem 1) code maintainability (1 hi file me sb kuch nhi likh skte....to alag alag file me likhenge to build tool chahiye hoga)
+Problem 2) SPA...no loading of complete page required
+Problem 3) Performance
+
+React is algo which can be used differently in different platforms
+
+React provides the tools and concepts to define component-based user interfaces (React --> btaega kaise krna h)
+ReactDOM handles the task of rendering those interfaces in a web environment (ReactDOM --> krega)
+
+
+Env           Renderer
+Web         ReactDOM
+Mobile      ReactNative  
+AR
+VR
+
+--------------------------------------------------------------------------------------
+JS                                                React
+document.createElement()  ---> React.createElement(typeOfElement, {style:{}, contentOfElement)  // tagName, props(which contains styling), content
+kahan.appendChild(kya) ----> ReactDOM.render(kya, kahan) 
+
+
+above syntax is never used instead we use JSX
+
+components -- functions that return JSX (html) (definition for now)
+function Heading() {
+     return <h1> Hi from JSX </h1>
+}
+ReactDOM.render(<Heading/>, rootElement)
+
+how to pass attributes --> ReactDOM.render(<Heading name={"Jasbir"} age={27}> </Heading>, rootElement);
+how to receive the above attributes -->
+        function Heading(props) {
+            const age = props.age;
+            const name = props.name;
+            return <h1>Hi I am {name} and I am {age} old</h1>
+         }
+
+but js cant understand html  returned by Heading()
+so we need transpiler like babel to convert JSX to JS
+babel

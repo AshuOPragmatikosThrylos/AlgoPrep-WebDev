@@ -1,0 +1,32 @@
+border-radius: 0% (by default)
+
+to convert square to circle
+
+.square {
+     height:
+     width:
+
+     animation-name: shape-changer;
+     animation-duration: 42
+
+}
+
+@keyframes shape-changer {
+       50 % {
+           border-radius: 50%
+       }  
+
+       from {
+       }
+
+       to { // same as 100%
+       }
+}
+
+
+0% --> beginning of animation
+100 % --> when animation is complete, returns back to original state. If do not want to return to original state --> animation-fill-mode: forwards
+
+animation-direction: alternate (wapas jis direction me animation hua tha, whi direction reverse me bhi hota h if we use alternate)
+
+

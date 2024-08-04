@@ -1,0 +1,215 @@
+npm create vite@latest
+npm run dev ---> to deploy react app
+
+First of all usually we've to
+1) clear main.jsx, App.jsx
+2) remove App.css, assets
+
+
+React ka koi bhi component bs ek hi chiz return kr skta h 
+isliye in App.jsx in return we wrap with div
+but sometimes this can be prolematic.....too many components each with their own div will occupuy too much extra space
+
+so use React Fragment
+
+return (<React.Fragment>
+      <h1> Hello React </h1>
+      <h2> Heading 2 </>
+</React.Fragment>)
+
+above can also be written as below in vite
+
+return (<>
+      <h1> Hello React </h1>
+      <h2> Heading 2 </>
+</>)
+----------------------------------------------------------------------------------
+Reading inputs from UI in React
+---------------------------------------- 
+function InputBox() {
+    const [content, setContent] = useState(""); // initial value of input --> ""
+
+    const handleChange = (e) => {
+        const updatedValue = e.target.value; // see previous JS lectures for e.target.value
+        setContent(updatedValue)
+    }
+
+    return <>
+        {/* value-> "" */}
+        <input type="text" value={content} onChange={handleChange}/>     // This makes the input a controlled component because its value is controlled by the state content
+    </>;
+}
+
+value = {content} --> sending input to state
+now how can state maipulate values affecting UI (input area) --> event listener --> onchange={someFunction}
+
+purpose of handleChange() ---> UI me change react k though hi krna h (normal html k throuh nhi) cuz react knows how to do it efficiently
+if we don't make use of setContent, to input area me chahe kitna bhi type krlo UI pe kuch bhi visible nhi hoga
+state me kb change krna h? jb even mile input element pr  (i.e when we type) --> and how to detect event on html element? onChange, onClick etc .....jb js k through html element fetch krte h tb, tb addEventListener use krte h 
+
+-------------------------------------------------------------------------------------------------------
+Shopping Cart application (like Todo application done earlier)
+---------------------------------
+Component name should begin with a capital letter   Shopping.jsx
+Component ka tag add krdo App.jsx me
+
+App.jsx
+-----------
+function App() {
+  // react fragment
+  return (
+    <div>
+      <h1>hello React</h1>
+      <Shopping></Shopping>
+    </div>
+
+  )
+}
+
+export default App
+----------------------------------
+
+
+className not class
+    return (
+        <div className='Shopping-list'>
+
+        </div >
+    )
+
+input me / dena pdta h closing tag me unlike html
+<input type="text" onChange={handleInput} value={content} /> 
+
+
+
+
+React me original arr ko change nhi krna rehta h nye array me copy krna rehta h (best practice to prevent confusion while debugging by isolating things in state)
+      const newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            newArr.push(arr[i]);
+        }
+
+shorthand for above
+const newArr = [...arr]                  IMP: spread operator
+
+
+after copying in new array we can add/delete from new array (don't change the old array)
+newArr.push(newItem)
+
+
+whenever state is updated React runs the return k andr ka content again         IMP: re-rendering
+
+---------------------
+How to implement Delete button logic? React ko kaise pta chalega state me se kaun sa list item delete krna h?
+for that react should be able to uniquely identify each list item in the state ....for this we can use key={index}
+
+ListItem.jsx
+
+    return <ul className="list">
+        {tasks.map((item, index) => {
+            return <li key={index}>                             // note
+                <span>{item}</span>
+                <button onClick={() => {
+                    handleDelete(index)                           // note
+                }}>Delete</button>
+            </li>
+        })}
+    </ul >
+
+
+Shopping.jsx
+
+    const handleDelete = (index) => {                        // note
+        console.log("Remove Item");
+        // inbuilt function -> search 
+        const filteredArr = []
+        for (let i = 0; i < tasks.length; i++) {
+            if (i != index) {                                          // note
+                filteredArr.push(tasks[i]);
+            }
+        }
+        setTasks(filteredArr);
+    }
+
+or using filter()
+
+const handleDelete = (index) => {
+    console.log("Remove Item");
+    const filteredArr = tasks.filter((task, i) => i !== index);
+    setTasks(filteredArr);
+}
+
+-----------------------
+input area ko agr empty krna h to only setContent("") will not work --> cuz isse to bs state change hua
+value={content} bhi krna hoga input area me ---> isse state gets reflected in UI
+
+Input.jsx
+ <input type="text" value={content} onChange={handleChange}/>
+-----------------------
+
+
+steps to follow while building any application
+--------------------------------------------------------
+1) build the static UI (HTML, CSS) first
+2) think about eventListeners for interactivity
+3 a) identify dynamic data and their format and add that to state
+
+Shopping.jsx
+
+const [tasks, setTasks] = useState([]); --> tasks is the dynamic data jo user se maang kr bnta h; added tasks to state
+
+ListItem.jsx
+
+           <li key={index}>
+                <span>{item}</span>                  {item} use krke humne isko generic format bna diya 
+                <button onClick={() => {
+                    handleDelete(index)
+                }}>Delete</button>
+            </li>
+
+3 b) static UI (hardcoded list of items) should be replaced with dynamic UI using state
+
+ListItem.jsx
+
+    return <ul className="list">
+        {tasks.map((item, index) => {
+            return <li key={index}>
+                <span>{item}</span>
+                <button onClick={() => {
+                    handleDelete(index)
+                }}>Delete</button>
+            </li>
+        })}
+    </ul >
+
+4) implement event listeners - don't touch the original state variables....always make a copy and manipulate that copy instead 
+5) extract out reusable part of code as components - component me breakdown krna last kaam hona chahiye
+        - first extract out as function in the same file
+                - aisa krne se sb fatne lgega kyunki function k andr sare variables, functions local nhi honge -- resolve this
+                  Ex: Shopping.jsx
+                         <InputBox handleInput={handleInput} content={content} handleAddItem={handleAddItem}></InputBox>        // note key:{value} ; also note key ka naam bhi humne khud bnaya h on fly pehle se aisa koi predefined key nhi h
+
+                         InputBox.jsx
+                               function InputBox(props) {                                         //note 
+                                    const handleInput = props.handleInput                   //note
+                                    const handleAddItem = props.handleAddItem
+                                     const content = props.content
+                                    return (
+                                           <div className="input-box">
+                                                 <input type="text" onChange={handleInput} value={content} />
+                                                <button onClick={handleAddItem}>Add Item</button>
+                                          </div>
+                                      )
+                                }
+                        
+	
+        - then move the extracted out function in a new file
+              - have to export the component from this new file so that it can be used by others
+
+                    export default InputBox
+
+
+
+More resources
+https://react.dev/learn/describing-the-ui
+https://react.dev/learn/adding-interactivity

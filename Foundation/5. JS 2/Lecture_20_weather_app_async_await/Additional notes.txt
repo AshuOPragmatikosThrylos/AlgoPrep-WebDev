@@ -1,0 +1,63 @@
+fetch(url) --> to send request
+fetch() is also an asynchronous function just like setTimeout()
+
+fetch(url). then (function(response) {}) --> argument of then() is an event listener function
+
+response.json() --> to get the reponse as json
+response.json() is also asynchronous 
+
+asynchronous function can't be used directly 
+they have to be used like ---> fn().then() 
+
+------------------------------------
+instead of .then() we can use async-await
+
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+            .then(function (response) {
+                // http response -> header and body
+                // console.log(response);
+                if (response.status == 404) {
+                    alert("Data not found");
+                } else if (response.status == 200) {
+                    response.json().then(function (jsonData) {
+                        console.log(jsonData);
+                    })
+                }
+            })
+        
+
+
+
+        async function fn() {
+            console.log("inside fn");
+            const response = await fetch("https://jsonplaceholder.typicode.com/todos/1")
+            console.log(response);
+            if (response.status == 404) {
+                alert("Data not found");
+            } else if (response.status == 200) {
+                const json = await response.json();
+                console.log(json);
+            }
+        }
+------------------------------------
+async fn1() {
+return something
+}
+
+Note: await k case me to we avoided then() but 
+agr async wala function call ho rha h aur agr uska return value humko capture krna h 
+to uske liye then() use krna hi pdega
+
+fn2() {
+   const res = fn1().then((something) --> {})
+}
+
+or we can do below - will have to make fn2() async (await bs async k andr hi use kr skte h)
+
+async fn2() {
+   const res = await fn1()
+}
+
+------------------------------------
+
+const [date, time] = dateTime.split(" ")   ---> not this is valid
