@@ -1,0 +1,62 @@
+pehle Weather app HTML + CSS+ JS se bnaya tha
+abhi HTML + Tailwind + React se bnaenge
+
+
+flow: index.html --> main.jsx --> App.jsx
+
+
+difference between jsx and html
+jsx me sare tag ko close krna rehta h
+
+html --> <input type="text" value="value" > 
+
+jsx --> 
+
+1)  <input type="text" value="value"  /> 
+or 
+2)  <input type="text" value="value" > </input>
+
+-------------------------------------------------------
+
+What is .module.css (an extension like .css) ? usecase?
+
+global.css might be applied to many components
+localComponent.css will be applied only to a specific component
+but both these css files might have same selectors
+and since css files of each component gets added as a separate style tag in the same final html of our application
+collision in selectors might arise, leading to things behaving different from expected
+
+so instead of using .css for any component we can use .module.css
+it eventually modifies the classnames/selectors such that it becomes unique across all components
+
+css modules is not provided by react but by build tools like vite
+----------------------------------------------------------------
+
+usage of Tailwind - like Bootstrap (https://youtu.be/Z1oJnuF0_ZI?feature=shared)
+
+How to setup Tailwind
+google search --> tailwind setup vite --> follow the steps mentioned
+
+
+CSS -->                                          Tailwind
+height                                             h-[150px]         we can also do h-[calc(100vh-150px)]
+background-color                            bg-[color]
+display:flex                                        flex
+justify-content:center                         justify-center
+align-items:center                              items-center
+width                                               width-[size]
+justify-content: space-between            justify-between
+color                                                text-colorName (like text-white)/ text-[#ffffff]
+padding across left-right i.e x axis           px-[1 rem]
+padding across y axis                             py-[1 rem] 
+border-bottom: 2px solid red                   border-b-2 border-b -solid border-red
+font-size                                              text-lg (lg means large)
+text-align:center                                text-center
+
+
+html --> <div> </div>
+css --> div {
+           }
+
+html using tailwind
+<div className="class1 class2"></div>

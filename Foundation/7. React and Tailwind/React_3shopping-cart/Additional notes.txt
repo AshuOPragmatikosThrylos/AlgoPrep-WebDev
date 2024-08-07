@@ -151,7 +151,7 @@ Input.jsx
 steps to follow while building any application
 --------------------------------------------------------
 1) build the static UI (HTML, CSS) first
-2) think about eventListeners for interactivity
+2) think about eventListeners for interactivity. Make empty venetListeners and add them to the place from where they will be triggered
 3 a) identify dynamic data and their format and add that to state
 
 Shopping.jsx
@@ -183,6 +183,12 @@ ListItem.jsx
     </ul >
 
 4) implement event listeners - don't touch the original state variables....always make a copy and manipulate that copy instead 
+      a) get the value 
+            i) select the input element
+            ii) if value is valid (not empty etc) only then proceed
+      b) make the request over network if required
+      c) extract desired info from response
+      d) update the state. need not worry about things being reflected in UI, since we've updated the state and in UI things are being fetched from state 
 5) extract out reusable part of code as components - component me breakdown krna last kaam hona chahiye
         - first extract out as function in the same file
                 - aisa krne se sb fatne lgega kyunki function k andr sare variables, functions local nhi honge -- resolve this
