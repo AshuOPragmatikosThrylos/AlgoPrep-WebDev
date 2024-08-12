@@ -1,0 +1,51 @@
+ek component file se bs ek chiz ko hi default export kr skte
+
+
+Myfile.jsx
+
+function NonDefault() {
+}
+
+const varName = 10;
+const privateVariable ="no to be exposed";
+
+
+function Myfile() {
+}
+
+
+export { NonDefault, varName }; // muliple cheezein export krani h then we use this format
+export default Myfile;
+
+
+importing default/non-default
+main.jsx
+
+import Myfile from './Components/Myfile';
+import { NonDefault } from './Components/Myfile';
+
+-------------------------------
+
+react developer tools (chrome extension)
+
+
+Just like Elements tab while "Inspect" shows html similarly if the web app is made from react
+we will get a "Components" tab on installing above extension
+in this tab we can see things in terms of extension
+-----------------
+children is a default prop
+
+HeadingParent.jsx
+<Heading name={"Jatin"} age={24}></Heading> // anything between the opening and closing tag goes into children
+
+
+HeadingProps.jsx
+function Heading(props) {
+    const age = props.age;
+    const name = props.name;
+    const children = props.children;
+
+}
+--------------
+TW class finder vs code extension --> css likho tw suggest kr deta h
+TW CSS Cheat Sheet --> website

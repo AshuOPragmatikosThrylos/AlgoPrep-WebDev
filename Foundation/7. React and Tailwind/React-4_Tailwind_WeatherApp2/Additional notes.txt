@@ -53,7 +53,9 @@ border-bottom: 2px solid red                   border-b-2 border-b -solid border
 font-size                                              text-lg (lg means large)
 text-align:center                                text-center
 
-
+                                                        hover:bg-blue-700 
+                                                        focus:bg-blue-900
+                                                        active:bg-blue-600
 html --> <div> </div>
 css --> div {
            }

@@ -1,0 +1,86 @@
+firebase uses
+1) auth
+2) db
+3) storage (file etc)
+4) deployment
+
+firebase provides realtime updates
+
+
+Sender --> Server ---> Server forwards it to Receiver(Client) without the client asking anything from server
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+WA_PRD.md me jo likha h under Future Scope wo khud se build krna h
+
+url k hisab se agr UI change krna hota h to uske liye library --> ReactRouterDOM
+to load components on basis of route --> ReactRouterDOM
+
+sbse pehle poori application yani main.jsx ko wrap krna hota h BrowserRouter me
+
+main.jsx
+import { BrowserRouter } from "react-router-dom";
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <BrowserRouter>
+        <App></App>
+    </BrowserRouter>
+,)
+
+
+ReactRouterDOM ek aur featur deta h in addition to BrowserRouter which is - Routes 
+It is used for conditional rendering
+
+App.jsx
+
+import { Route, Routes } from "react-router-dom";
+
+import Login from "./Components/Login"
+// other imports
+
+function App() {
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+
+        {/* it will match to the route that has chat/sometext */}
+        <Route path="/chat/:uniqueId" element={<Chat></Chat>}></Route>     
+
+        {/* it will match with everyThing */}
+        <Route path="*" element={<PageNotFound></PageNotFound>} ></Route>
+
+      </Routes>
+    </>
+  )
+}
+
+
+ :uniqueId se id specific pattern matching to ho jaega pr what if we want to fetch component corresponding to a particular id --> useParams hook
+Let's say you navigate to the URL http://yourapp.com/chat/12345
+
+Chat.jsx
+
+import { useParams } from 'react-router-dom';
+
+function Chat() {
+  const params = useParams();
+
+  return (
+    <h2>Chat : {params.uniqueId}</h2>    // {params} will not work...direct object mention nhi kr skte...object.something krna pdega provided we have :something in the route while defining all the routes
+  )
+}
+
+params.uniqueId == 12345
+
+
+-----------------------------------
+To use Firebase have to create account on it first (Backend as a Service)
+alternative: appwrite
+
+Features of Firebase we will be using
+1) Authentication
+2) Firestore Database - start in test mode
+3) Storage
+4) Hosting
