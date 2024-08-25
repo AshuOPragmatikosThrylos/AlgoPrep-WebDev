@@ -1,0 +1,60 @@
+How to add icons in React?
+many more services are there but some popular ones are
+
+material ui icons react
+lucid icons react --> copy jsx button for any icon
+
+
+instead of h-[80px] use h-20 (good practice)....h-20 is provided by tailwind....in multiples of 4
+
+
+css socho (border-radius) cheat sheet me search kro for corresponding tailwaind class (rounded-lg)
+
+import Login as LoginIcon from 'lucide-react'  (as we have compoenent with same name so importing as Login would create conflict) Login.jsx
+
+-----------------------
+what is context?
+
+our application is a DOM tree structure
+so if any node wants any data we pass data from the root all way to that node along that branch though props (prop drilling)
+so instead of having to send the data as props to those nodes which don't need that information
+and so that we can directly send data to the node which actually requires it
+
+Enter CONTEXT - createContext(), <Wrapper.Provider value={val}>, useContext(Wrapper)
+
+PropDrillingSol.tsx
+
+import {useContext} from "react"
+
+export const ContextWrapper = React.createContext()
+
+
+jahan se value bhejna h
+const value = 10;
+<ContextWrapper.Provider value={value}>
+    <rootElementJahanSeValueBhejnaH></>
+</ContextWrapper.Provider>
+
+
+jahan receive krna h
+const message = useContext(ContextWrapper);
+<div>value :{message} </div>
+
+------------------
+implementing Light/Dark mode using context
+------------------------
+
+improving theme context code
+
+useContext(ContextWrapper) --> koi ur component me use krte h to ContextWrapper and useContext dono import krna pdta h, we don't want that
+
+ThemeContext.jsx
+useContext(ContextWrapper) --> goal: iske jagah pr useDarkTheme() aisa kuch kr paye
+
+function useDarkTheme() {
+    return useContext(ThemeContext);
+}
+
+
+
+

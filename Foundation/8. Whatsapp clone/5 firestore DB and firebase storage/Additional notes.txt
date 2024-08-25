@@ -1,0 +1,23 @@
+Firestore Database - NoSQL DB
+Start a collection
+design schema - TODO: add this schema in Github project as well
+
+har msg me sender ya receiver field bhi add krna chahiye tbhi pta chalega msg right me dikhana h ya left me
+
+login krne pr uid (user id) milta h which we'll use to create a user in DB --> setDoc () just search  how to create a firestore dcoument with given keys
+
+---------------------------------------
+Storage (images/files etc)
+
+just search how to store in firebase
+
+ref() --> gives stora ekahan hga uska object reference
+
+const uploadTask = uploadBytesResumable(kahan_save_krna_h_i.e_output_of_ref, img/file)
+
+
+uploadTask.on("state_changed", progressCB, errorCB, finishedCB)
+
+progressCB --> user defined callback function for progress
+
+in finishedCB() we can have getDownloadURL( predefined) to get the url of the file/img
