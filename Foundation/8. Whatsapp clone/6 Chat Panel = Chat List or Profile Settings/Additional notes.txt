@@ -1,0 +1,50 @@
+Home.jsx
+
+left side me ya to chat list dikhega ya profile settings (conditional logic k liye maintain state.....showProfile in ChatPanel.jsx) (additionally left top bar bhi dikhega chatlist k sath)
+
+right side me ya to blank dikhega ya individual chat dikhega
+
+to print chat list get list of users from firebase --> search how to get collection of user --> getDocs()
+
+
+AuthContext --> globall level pe contxt store krke rkhna h....wrap app in main.jsx
+we need isLoggedIn info at different levels in DOM
+
+
+to display in profile I need info of logged in user --> so I store this in context when a user logs in Login.jsx (setUserData())
+
+
+context me agr user data pda hua h --> mtlb user already logged in h --> isLoggedIn state maintain krne ki zaroort nhi
+ProtectedRoute.jsx 
+if(isLoggedIn) replaced by if(userData)
+
+
+Firebase gives real time data meaning
+if any update happens after we've already fetched from Firebase --> Firebase updates the fetched data
+
+import { getFirestore, collection, onSnapshot } from "firebase/firestore";
+
+// Initialize Firestore
+const db = getFirestore();
+
+// Real-time listener for the "users" collection
+const usersCollection = collection(db, "users");
+
+onSnapshot(usersCollection, (snapshot) => {
+  const usersList = snapshot.docs.map(doc => ({
+    id: doc.id,
+    ...doc.data()
+  }));
+  
+  console.log("Real-time user data:", usersList);
+});
+
+
+onSnapshot sets up a listener on the "users" collection (not used in ChatPanel.jsx bu should have used for realtime)
+
+
+Future improvement --> baar baar login krna na pde isliye page reload pr
+at the time of login in Login.jsx
+store userData in local storage
+and 
+AuthContext.jsx me useEffect lgakr get krlo from local storage
