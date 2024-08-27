@@ -41,10 +41,3 @@ onSnapshot(usersCollection, (snapshot) => {
 
 
 onSnapshot sets up a listener on the "users" collection (not used in ChatPanel.jsx bu should have used for realtime)
-
-
-Future improvement --> baar baar login krna na pde isliye page reload pr
-at the time of login in Login.jsx
-store userData in local storage
-and 
-AuthContext.jsx me useEffect lgakr get krlo from local storage

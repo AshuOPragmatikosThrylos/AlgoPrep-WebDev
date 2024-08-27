@@ -1,0 +1,96 @@
+chat/hvxhvbjzsbvjkBf
+i.e
+chat/someUserId pe click krke uske chat pe jana h
+
+ye kaise kr skte? bina page reload kiye??
+
+react-router-dom provides us <Link to={/someUserId}></Link> (Refer userCard.jsx)
+------------------------
+baar baar login na krna pde  on page reload
+
+onAuthStateChanged - an observer (provided by firebase) that gets triggered whenever the authentication state of the user changes. This includes:
+When a user logs in.
+When a user logs out.
+When a user’s credentials change.
+When the app initializes, it checks if the user is already logged in from a previous session.
+
+
+just search --> how to store and get auth related info in firebase so that don't have to login again
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+const auth = getAuth();
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in.
+    console.log("User is signed in:", user);
+  } else {
+    // No user is signed in.
+    console.log("No user is signed in.");
+  }
+});
+
+
+AuthContext.jsx
+
+    useEffect(() => { // for network wala kaam after 1st render
+
+        onAuthStateChanged(auth, async (currentUser) => {
+
+            if (currentUser) { // already logged in
+                const docRef = doc(db, "users", currentUser?.uid); //   ?.     ---> optional chaining operator
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const { uid, photoURL, displayName, email } = docSnap.data();
+
+                    // jaise hi kuch change hota h, context me jaake save kr dete h user ka data
+                    setUserData({
+                        id: uid,
+                        profile_pic: photoURL,
+                        email,
+                        name: displayName
+                    });
+                    console.log("userData Added");
+                }
+            }
+        })
+    }, []) // Because the dependency array is empty ([]), this effect runs only once when the component is first rendered
+
+
+
+Login.jsx 
+Login()
+
+    if (userData != null) {
+        navigate("/");
+        return <></>
+    }
+
+
+------------------------------
+signout using firebase
+
+import { getAuth, signOut } from "firebase/auth";
+
+const auth = getAuth();
+
+signOut(auth)
+  .then(() => {
+    // Sign-out successful.
+    console.log("User signed out.");
+  })
+  .catch((error) => {
+    // An error happened.
+    console.error("Error signing out:", error);
+  });
+
+--------------------------------------
+
+In chat, what about the 2nd user - receiver ?? Refer ChatWindow.jsx
+------------------------------------
+How to deploy application?
+
+Search how to host application using firebase
+Below question is asked during the process
+What do you want to use as your public directory --> dist
