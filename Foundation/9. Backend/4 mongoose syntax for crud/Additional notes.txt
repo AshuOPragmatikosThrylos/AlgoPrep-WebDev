@@ -1,0 +1,40 @@
+MongoDB uses BSON (Binary JSON) to store data
+
+Pros of MongoDB
+1)stores in binary...less space
+2) efficient in alter/update queries
+
+Cons of MongoDB
+1) can't enforce business logic on DB (solution: ORM tool)
+
+Mongoose - ORM tool for MongoDB
+
+
+    RDBMS                                    MongoDB
+      Table                                       Collection
+      Row/Tuple                               Document
+     Column                                        Field
+    Primary Key                                  _id
+
+har database query me async-await lgana pdta h ....cuz network call to db
+const createUser = async function (req, res) {
+    try {
+        const userObject = req.body;
+
+        const user = await UserModel.create(userObject);
+        // send back the created user with status 201 (created)
+        res.status(201).json(user);
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            message: "internal server error",
+            error: err,
+        })
+    }
+}
+
+----------------------------------------
+
+pre hook (runs before saving in DB)(mongoose.model se just pehle pre hook likhna pdta h)
+post hook  (runs after saving in DB)(mongoose.model se just pehle post hook likhna pdta h)

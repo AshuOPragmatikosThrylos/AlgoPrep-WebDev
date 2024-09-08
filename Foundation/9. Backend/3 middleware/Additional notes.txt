@@ -1,0 +1,63 @@
+express provides middlewares (Imp for interviews)
+
+what is middleware? for preprocessing like authentication etc (isn't this proxy design pattern?)
+implement kaise krte h?
+
+function beforeFn(req, res, next) { // note the argument - next
+    console.log("Before called");
+     console.log("req.body", req.body);
+    if () {
+        next(); // will go to next route sequentially which matches the request i.e app.post("/posts", AfterFn); here // note khud response na bhejkr keh rha h next route pe chale jao
+    } else {
+        res.status(400).json({
+            message: "bad request" // lekin agr kuch galat ho gya is middleware me to aage (AfterFn) bdhne hi nhi dega
+        })
+    }
+}
+function AfterFn(req, res) {
+    console.log("after fn called");
+     console.log("req.body", req.body);
+
+    res.status(200).json({
+        message: "response send",
+    })
+}
+
+
+app.use(express.json());
+app.post("/posts", beforeFn);
+app.post("/posts", AfterFn);
+
+
+------------------------------------------------
+How to make 404 route??
+
+what will be the endpoint?
+what will be the http method?
+
+file k last me after all other routes
+
+app.use(function (req, res) {
+    res.status(404).json({
+        message: "404 page not found ",
+
+    })
+
+})
+---------------------------------------------------
+har method pe match krna h?? (match? kisse? request ko defined route se)
+use
+app.use()
+
+har post method pe match krna h
+app.post()
+
+har route/endpoint pe match krna h?
+route hi define mt kro
+-------------------------------------------
+hosted MongoDB server --> MongoDBAtlas
+mongoose helps us to connect to mongoDB 
+Mongoose is a popular Object Data Modeling (ODM) library for MongoDB and Node.js
+
+dotenv --> node package to store env variables/secrets
+

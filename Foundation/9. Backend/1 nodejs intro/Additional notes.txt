@@ -1,0 +1,65 @@
+logic --> JS
+features --> env (browser/ NodeJS) 
+
+
+
+     features               node module
+video streaming            stream
+networking                http/https
+file works                        fs
+authentication                crypto
+path                              path   (mac,windows have different file structure....use of slash to separate directories in path differs as well) 
+
+
+fs module function
+----------------------
+writeFileSync() --> Why sync?? cuz by default functions of node are async...i.e it will run a background task
+                              if we want to block the rest of the program until writing of contens in the file is done --> use synchronous function for writing
+
+to kya async version me humko pta nhi chalega ki thik se chla ki nhi function??
+pta chalta h
+
+fs.writeFile(fileName, content, function (err, data) {
+    if (err) {
+        console.log("something went wrong");
+    } else {
+        console.log("FIle is wriitem comfortably")
+    }
+})
+
+-----------------------
+node js gives certian global variables 
+1. __dirname (double underscore) 
+2. __filename
+
+
+console.log("current folder path", __dirname)
+console.log("current file path", __filename)
+
+const directoryPath = path.dirname(__filename) // gives directoryPath for the file whose filePath is given as input
+
+const fileExtension = path.extname(__filename)
+
+
+
+path.join() --> helps to build new path relative to some other path
+
+const filePath = path.join(__dirname, "../", 'views', 'index.html');
+console.log(__dirname) // C:\user\projects\myapp
+console.log(filePath); // C:\user\projects\views\index.html
+
+---------------------------------
+HTTP Methods
+
+create --> POST
+read --> GET
+update --> PATCH
+replace --> PUT
+delete --> DELETE
+----------------------------------
+Response status codes
+
+1XX --> informational (Web Sockets)
+3XX --> redirection
+4XX --> client error
+5XX --> server error
