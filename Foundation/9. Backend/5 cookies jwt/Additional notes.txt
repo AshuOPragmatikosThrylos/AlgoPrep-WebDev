@@ -1,0 +1,67 @@
+Revise middleware for auth then continue with this cookies/jwt for auth
+
+HTTP is stateless
+
+cookies
+---------
+browser/client side storage
+mapped to domain name
+cookies goes into header of http packet
+
+any website starts sending the cookies in requests (2nd visit onwards) which it had obtained from the server during the previous (1st) visit 
+
+
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
+app.get("/", function (req, res) { // re, res from express
+    res.cookie("prevpage", "home", {
+        maxAge: 1000 * 60 * 60 * 24,
+    })
+
+    res.status(200).json({
+        message: "recived request on  home page"
+    })
+})
+----------------------
+res.clearCookie('prevpage', { path: "/" });
+-------------------------
+
+json web token - cookies can carry token
+-------------------
+
+callback based function ko async-await me convert krne k liye
+const util = require("util"); // node js module
+const promisify = util.promisify;
+
+const promisdiedJWTsign = promisify(jwt.sign);
+-----------
+
+    res.cookie("jwt", authToken, {
+        maxAge: 1000 * 60 * 60 * 24,
+        httpOnly: true, // it can only be accessed by the server; hacker cannot get the token from FE
+    })
+--------------
+
+How to verify the token?
+
+Secret k madad se verify krte h ki khin kisi ne change krke to token nhi bhej diya h na
+const unlockedToken = await promisdiedJWTverify(authToken, SECRET_KEY);
+----------------
+JWT anatomy - consists of 3 strings
+
+1) payload (usecase - urserId pass krdo....server isko use kr skta h apna kaam krne k liye)
+2) encryption algo name
+3) signature = (payload + algo name + secret) locked using an algo
+
+above 3 are locked (signed) using secret
+
+
+if (the signature in the jwt sent by client to server == the signature formed by server by using the secret sent by the client)
+=> jwt verified; source authenticated 
+
+so comparison to signature ka ho rha h na to whatif someone changes the payload in jwt but keeps the signature same
+then the signature which will be formed by the sever using the secret, payload, signature sent by the client will be different from the seignature contained in the jwt
+
+
+TODO: H/w 
