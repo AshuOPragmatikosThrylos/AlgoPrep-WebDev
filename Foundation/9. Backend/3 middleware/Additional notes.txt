@@ -54,6 +54,9 @@ app.post()
 
 har route/endpoint pe match krna h?
 route hi define mt kro
+
+koi particular route k liye middleware use krna h to
+app.get("/profile", protectRouteMiddleware, profilehandler)
 -------------------------------------------
 hosted MongoDB server --> MongoDBAtlas
 mongoose helps us to connect to mongoDB 

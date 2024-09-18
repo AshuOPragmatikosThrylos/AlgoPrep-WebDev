@@ -1,0 +1,71 @@
+nodejs  me export krne k liye
+module.exports = UserModel --> agar ek hi chiz export krna h
+
+agr multiple cheezein export krni h
+module.exports = {
+    createUser, getAllUser, getUser, deleteUser
+}
+
+to import --> const { createUser, getAllUser, getUser, deleteUser } = require("./userController");
+
+write negative case first to avoid if else ladder
+
+koi particular route k liye middleware use krna h to --> 
+app.get("/profile", protectRouteMiddleware, profilehandler)
+
+
+
+
+find a user in DB whose email matches the input
+const user = await UserModel.findOne({email: userObject.email});
+or
+async function loginHandler(req,res){
+try{
+const {email, password} = req.body;
+const user = await UserModel.findOne({email});
+
+const user = await UserModel.findById(userId);
+-------------------
+If the passwords matchon 1st login , generate an authentication token and send it to the
+client in cookies
+--------------------
+How to use token in middleware to allow protected access of certain routes?
+
+1. Use a middleware function to check if an authentication token is present in the
+request headers.
+2. If a token is present, verify its validity and extract the user's information from it (req.id = decryptedToken.id)
+3. If the token is valid and the user is authorised, allow access to the protected
+route. Otherwise, return an error response.
+
+------------------------
+authentication --> login/logout
+authorisation --> has permissions or not for a particular action (red/write)
+
+async function isAdminMiddleware(req, res, next){
+        const id = req.id;
+        const user = await UserModel.findById(id);
+        if(user.role !== "admin"){
+        return res.status(403).json({
+                message:"you are not admin",
+                status:"failure"
+                })
+        }else{
+                next();
+        }
+}
+app.get("/user",protectRouteMiddleware, isAdminMiddleware, getAllUser);
+---------------------------
+async function profileHandler(req,res){
+try{
+const userId = req.id; // I can access id cuz I've set id in req in protectRouteMiddleware - (req.id = decryptedToken.id)
+const user = await UserModel.
+
+middleware me agr req/res me kuch bhi change kiya to wo sare next functions me bhi propagate hota h 
+without needing to explicitly pass req/res to next function 
+-------------------------------
+middleware can be identified by - middleware k last me we call next() which passes control to next route/middleware
+--------------------------------
+
+How to store password ? how to compare incoming with the stored one?
+example.js
+check the pdf
