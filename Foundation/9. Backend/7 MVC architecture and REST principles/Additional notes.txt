@@ -1,0 +1,38 @@
+app.post("/api/auth/login", loginHandler);
+app.post("/api/auth/signup", signupHandler);
+
+can be written like below
+
+const authRouter = express.Router();
+app.use(authRouter, "/api/auth");
+
+authRouter.post("/login", loginHandler);
+authRouter.post("/signup", signupHandler);
+
+which in turn can be written like below (this is how we do in prod code)
+
+
+authRouter
+    .post("/login", loginHandler);
+    .post("/signup", signupHandler);
+
+
+-------------
+In this class organised code in Routes, Controllers, Models
+
+----------------------------
+REST principles
+1) clear distinction between a client and a server
+2) each resource/entity is exposed through a route
+3) actions are caterogorised under HTTP methods
+4) stateless APIs
+
+
+
+instead of app.get("/getUser") it should be app.get("/user") .
+Instead of app.get("/reviewforIphone14") it should be app.get("/review/iphone14")
+--------------
+Why MVC?
+
+increases scalability
+reduces tight-coupling between components. Thus each component now can be tested separately
