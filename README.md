@@ -1,2 +1,2 @@
 # AlgoPrep-WebDev
-MERN
+MERN NextJS
