@@ -1,0 +1,71 @@
+1) next js
+2) tailwindCSS
+3) component library - > SchdcnUI
+4) Redux -> upgrade to context API
+5) Payment -> razorpay
+6) deployment -> vercel (frontend) , render (api host)
+7) streaming: nodejs
+8) forget, reset password: mail send
+9) twilio api : movies, tv shows
+-----------------------------------------------
+
+Biggest problem with React: SEO (cuz google crawlers get only <div id="root"> element)
+
+
+next js pehle se build krke rkhta h aur poora html bhej deta h (server side rendered website) to client in response to any request which are crawler compatible thus improving SEO
+next js me server side rendering hota h 
+
+Advantages of NextJS
+1) initial load time reduces
+2) SEO improves
+
+3) inbuilt routing
+4) gives image component which is optimised for images cuz images are 40% of webpage size
+
+--------------------------------
+Routing in NextJs is folder based
+
+
+the page.jsx in app folder is for --> / route
+the page.jsx in app/about folder is for --> /about route
+the page.jsx in app/about/me folder is for --> /about/me route
+the page.jsx in app/about/me/[movieId] folder is for --> /about/me:movieId route (folder name here id has to be in square brackets) (props.params.movieId se id milega)
+-------------------------
+
+In React we get Link from ReactRouter
+In nextJs we get it directly from nextjs
+
+<Link href="/about"> About</Link>
+------------------------------
+layout.js --> has common layout(header footer etc) across all routes (now it is available in React as well)
+
+If not passing anything in component then don't do <Footer></Footer> 
+instead do <Footer/>
+------------------------------
+agr koi component koi particular route pe render ho rha h
+aur wo component api ko call krta h
+to next js api ko call krke poora html bna kr client ko response bhejta h
+
+Jio_clone\Pocs\next_setup\src\app\movies\[movieId]\page.jsx
+
+async function fetchMovie(id) {
+    const response = await fetch(`https://freetestapi.com/api/v1/movies/${id}`);
+    const data = await response.json();
+    return data;
+
+}
+
+async function MovieData(props) {
+    const movieId = props.params.movieId;
+    const movieData = await fetchMovie(movieId);
+
+    return (
+        <>
+            <p>-----------------------</p>
+            <h1>Movie Data Page for :  {movieId}</h1>
+            <h2>Movie Name : {movieData.title}</h2>
+            <p> Language Name : {movieData.language}</p>
+        </>
+    )
+}
+
