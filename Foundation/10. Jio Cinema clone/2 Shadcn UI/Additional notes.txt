@@ -1,0 +1,57 @@
+Material UI, Chakra UI, Ant Design are librares which give components
+All above were inspired by Bootstrap
+They are rarely used now after Shadcn
+
+
+Problem with MaterialUI/Chakra UI/Ant design which Shadcn solved
+1) if we want any thing customised it was not easy. That's why everyone's website looked similar
+2) had to import lot of unused code/components (In Shadcn dev installs only those components which they need not the whole library)
+
+Shadcn is built on top of tailwind (can change styling therefore shadcn solves cutomomisability problem)
+
+Benefits of using component library like shadcn ui
+1) it covers edge cases like whether would work on different devices or not
+2) responsive
+3) accessible (for specially abled people)
+
+
+
+jsconfig.js has --> @ means src folder
+
+while importing all paths are mentioned wrt to src folder so it goes like 
+import {Button} from "@/components/ui/button"
+
+Shadcn also gives variant
+<Button variant="something"></Button>
+
+with variant can use a provided standard styling
+with className (refer tailwind) can change the styling at a granular level if need to customise even after using variant
+
+
+if don't want to use shadcn --> shadcn is based on radix ui
+radix gives only functionality in components not styling
+
+
+components example
+1) button
+2) badge
+3) accordian
+4) carousel
+5) card
+
+Explore
+https://ui.shadcn.com/docs/components/accordion
+
+Components which we will use in Jio clone project
+CarSheet
+Dialog
+Skeleton
+Toast
+Label
+Button
+Input
+
+
+
+v0 available in shadcn ui --> gives components along with their ui
+We can give image to it as well
